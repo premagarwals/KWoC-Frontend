@@ -34,3 +34,7 @@ body {
   background: linear-gradient(to top, #008aff, #00ffe7);
   border-radius: 10px;
 }
+
+.nav-glow {
+  text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24;
+}

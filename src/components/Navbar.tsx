@@ -13,8 +13,8 @@ import { useAuthContext } from "../util/auth";
 import { UserType } from "../util/types";
 
 const LINKS = [
-  { name: "HOME", link: ROUTER_PATHS.HOME },
-  { name: "PROJECTS", link: ROUTER_PATHS.PROJECTS_LIST },
+  { name: "Home", link: ROUTER_PATHS.HOME },
+  { name: "Projects", link: ROUTER_PATHS.PROJECTS_LIST },
   // { name: "TESTIMONIALS", link: ROUTER_PATHS.TESTIMONIALS },
   { name: "FAQs", link: ROUTER_PATHS.FAQ },
 ];
@@ -34,8 +34,8 @@ function BrandLogo() {
 function getNavbarLinkClasses(isMobile: boolean, isActive: boolean = false) {
   return (
     (isMobile
-      ? "w-full text-end block p-2 text-sm font-semibold flex justify-end "
-      : "font-semibold hover:underline ") + (isActive ? "text-primary" : "")
+      ? "w-full text-end block p-2 text-sm flex justify-end "
+      : " hover:underline ") + (isActive ? "text-primary text-yellow-300 nav-glow" : "text-white")
   );
 }
 
@@ -96,9 +96,9 @@ function LoginButton({ isMobile }: { isMobile: boolean }) {
       ) : (
         <Link
           to={GH_OAUTH_URL}
-          className={getNavbarLinkClasses(isMobile, false)}
+          className={`text-gray-950 bg-white px-6 py-2 rounded shadow-[3px_3px_0_3px_#707070]`}
         >
-          LOGIN
+          Register <span> </span> →
         </Link>
       )}
     </>
@@ -118,7 +118,7 @@ function Navbar() {
   return (
     <div className="fixed inset-x-0 z-[210] w-full">
       <nav
-        className={`flex shadow-md mt-4 items-center justify-between max-w-7xl gap-4 mx-auto border border-[#FFFFFF]/[0.16] px-4 py-2 rounded-lg w-[95%] inset-x-0 backdrop-blur-md z-50 ${
+        className={`flex mt-12 items-center justify-between max-w-full gap-4 mx-auto px-4 md:px-8 py-2 rounded-lg w-[95%] inset-x-0 z-50 ${
           mobileMenuOpen ? "hidden" : ""
         }`}
       >
@@ -134,7 +134,7 @@ function Navbar() {
 
         <div className={`${mobileMenuOpen ? "hidden" : null}`}>
           <ul
-            className={`lg:flex lg:items-center lg:w-auto lg:space-x-6 ${
+            className={`lg:flex lg:items-center lg:w-auto lg:space-x-16 ${
               mobileMenuOpen ? "block" : "hidden"
             }`}
           >
