@@ -22,11 +22,19 @@ const LINKS = [
 function BrandLogo() {
   return (
     <Link to={"/"}>
-      <img
-        className="object-contain cursor-pointer h-12 w-12"
-        src={kwoc_logo}
-        alt="KWoC Logo"
-      />
+      <div className="container border-2 border-white rounded-full p-4 relative rotate">
+        <img
+          className="object-contain cursor-pointer h-12 w-12 anti-rotate"
+          src={kwoc_logo}
+          alt="KWoC Logo"
+        />
+        <div className="dots dot1"></div>
+        <div className="dots dot2"></div>
+        <div className="dots dot3"></div>
+        <div className="dots dot4"></div>
+        <div className="dots dot5"></div>
+        <div className="dots dot6"></div>
+      </div>
     </Link>
   );
 }
@@ -118,9 +126,8 @@ function Navbar() {
   return (
     <div className="fixed inset-x-0 z-[210] w-full">
       <nav
-        className={`flex mt-12 items-center justify-between max-w-full gap-4 mx-auto px-4 md:px-8 py-2 rounded-lg w-[95%] inset-x-0 z-50 ${
-          mobileMenuOpen ? "hidden" : ""
-        }`}
+        className={`flex mt-12 items-center justify-between max-w-full gap-4 mx-auto px-4 md:px-8 py-2 rounded-lg w-[95%] inset-x-0 z-50 ${mobileMenuOpen ? "hidden" : ""
+          }`}
       >
         <BrandLogo />
         <div className="lg:hidden ml-auto -mr-5">
@@ -134,9 +141,8 @@ function Navbar() {
 
         <div className={`${mobileMenuOpen ? "hidden" : null}`}>
           <ul
-            className={`lg:flex lg:items-center lg:w-auto lg:space-x-16 ${
-              mobileMenuOpen ? "block" : "hidden"
-            }`}
+            className={`lg:flex lg:items-center lg:w-auto lg:space-x-16 ${mobileMenuOpen ? "block" : "hidden"
+              }`}
           >
             {LinksList(false)}
 

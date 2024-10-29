@@ -15,7 +15,7 @@
 }
 
 body {
-  background: url("./assets/stars.png"), #0a0a19;
+  background: url("./assets/stars.png"), #1a0a19;
 }
 
 /* Chrome, Edge, and Safari */
@@ -37,4 +37,95 @@ body {
 
 .nav-glow {
   text-shadow: 0 0 10px #fbbf24, 0 0 20px #fbbf24;
+}
+
+.dots {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 2px currentColor;
+  animation: flicker 10s infinite;
+  animation-delay: 0s;
+}
+
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+.anti-rotate {
+  animation: anti-rotate 20s linear infinite;
+}
+
+@keyframes flicker {
+  0%,
+  100% {   opacity: 1;  }
+  10%  {   opacity: 1;  }
+  20%  {   opacity: 0.4;}
+  30%  {   opacity: 1;  }
+  40%  {   opacity: 0.2;}
+  50%  {   opacity: 1;  }
+  60%  {   opacity: 0.5;}
+  70%  {   opacity: 1;  }
+  80%  {   opacity: 0.8;}
+  90%  {   opacity: 1;  }
+}
+
+@keyframes rotate {
+  0%   {   transform: rotate(0deg);  }
+  100% {   transform: rotate(360deg);}
+}
+
+@keyframes anti-rotate {
+  0%   {   transform: rotate(0deg);   }
+  100% {   transform: rotate(-360deg);}
+}
+
+/* Positions for each dot */
+.dot1 {
+  background-color: rgba(217, 43, 68, 1);
+  color: rgba(217, 43, 68, 0.7);
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 2s;
+}
+
+.dot2 {
+  background-color: rgba(56, 165, 68, 1);
+  color: rgba(56, 165, 68, 0.7);
+  top: 15%;
+  left: -2%;
+  animation-delay: 1s;
+}
+
+.dot3 {
+  background-color: rgba(56, 165, 68, 1);
+  color: rgba(56, 165, 68, 0.7);
+  bottom: 15%;
+  right: -2%;
+  animation-delay: 1s;
+}
+
+.dot4 {
+  background-color: rgba(217, 43, 68, 1);
+  color: rgba(217, 43, 68, 0.7);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation-delay: 2s;
+}
+
+.dot5 {
+  background-color: rgba(245, 169, 68, 1);
+  color: rgba(245, 169, 68, 0.7);
+  top: 15%;
+  right: -2%;
+}
+
+.dot6 {
+  background-color: rgba(245, 169, 68, 1);
+  color: rgba(245, 169, 68, 0.7);
+  bottom: 15%;
+  left: -2%;
 }
